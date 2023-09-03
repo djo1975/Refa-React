@@ -1,0 +1,21 @@
+.card {
+    width: 70px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-back {
+    width: 70px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    background-image: url('../../public/images/back.png');
+    background-size: cover;
+    background-position: center;
+  }
+  

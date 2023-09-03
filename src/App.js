@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { useSelector } from 'react-redux';
+import { usePlayerContext } from './components/PlayerContext';
+import Lobby from './components/Lobby';
+import Table from './components/tables/Table';
 
 function App() {
+  const activeGames = useSelector(state => state.games.filter(game => game.status === 'active'));
+  const { selectedPlayerId, currentPlayerName } = usePlayerContext();
+
+  const filteredGames = activeGames.filter(
+    (activeGame) =>
+      activeGame.creator_id === selectedPlayerId ||
+      activeGame.player2_id === selectedPlayerId ||
+      activeGame.player3_id === selectedPlayerId
+  );
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {filteredGames.length > 0 ? (
+        filteredGames.map((activeGame) => (
+          <Table
+            key={activeGame.id} 
+            game={activeGame}
+            currentPlayerId={selectedPlayerId}
+            currentPlayerName={currentPlayerName}
+          />
+        ))
+      ) : (
+        <Lobby />
+      )}
     </div>
   );
 }

@@ -1,0 +1,9 @@
+.auction-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+.auction-panel button {
+    height: 3rem;
+    width: 13rem;
+  }

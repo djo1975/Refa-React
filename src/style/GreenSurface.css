@@ -1,0 +1,13 @@
+.green-surface {
+    width: 650px;
+    height: 400px;
+    background-color: green;
+    border: 2px solid #333;
+    border-radius: 10px;
+    position: relative;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

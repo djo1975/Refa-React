@@ -1,0 +1,41 @@
+/* Dodajte ove stilove u vaš CSS fajl ili stilski komponentu */
+.player-info {
+    display: flex;
+    justify-content: space-between; /* Rasporedi komponente slobodno prostorno sa desne i leve strane */
+    align-items: center; /* Centralizuj vertikalno unutar .player-info */
+  }
+  
+  .right-player {
+    order: 1; /* Pomeri right-player na desnu stranu */
+  }
+  
+  .left-player {
+    order: 2; /* Pomeri left-player na levu stranu */
+  }
+  
+  /* Ovo dodaje razmak između .right-player i .left-player */
+  .right-player, .left-player {
+    margin: 0 10px; /* Podesite margine po potrebi */
+  }
+  /* Stilovi za prikaz karata ispod imena */
+  .player-cards {
+    display: flex;
+    justify-content: center; /* Centralizuj horizontalno */
+    flex-wrap: wrap; /* Dozvoli zamotavanje karata na manjim ekranima */
+  }
+  
+  .player1-cards,
+  .player2-cards,
+  .player3-cards {
+    margin: 10px; /* Dodajte razmak između grupa karata */
+    text-align: center; /* Centralizuj tekst unutar grupa karata */
+  }
+  
+  .player1-cards h3,
+  .player2-cards h3,
+  .player3-cards h3 {
+    margin: 5px 0; /* Dodajte razmak između naslova i karata */
+  }
+ .current-player-cards {
+    display: flex;
+ }
